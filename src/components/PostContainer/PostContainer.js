@@ -1,17 +1,11 @@
 import React from 'react';
+import Comment from '../Comment/Comment';
 
 function PostContainer(props) {
     return (
-        <React.Fragment>
-            {props.posts.map(posts => (
-                <div className="post-container">
-                    <div className="post-content"><img src={posts.thumbnailUrl} alt={posts.username} /> {posts.username}</div>
-                    <div className="post-image">
-                        <img src={posts.imageUrl} alt={posts.username} />
-                    </div>
-                </div>
-            ))}
-        </React.Fragment>
+      <div className="top-container">
+        <Comment posts={props.posts} />
+      </div>
     )
 }
 

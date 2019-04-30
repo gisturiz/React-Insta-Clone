@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import dummyData from "./dummy-data";
 import PostContainer from './components/PostContainer/PostContainer';
-import CommentSection from './components/CommentSection/CommentSection';
+import SearchBar from './components/SearchBar/SearchBar';
 
 
 class App extends React.Component {
@@ -36,8 +36,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <SearchBar />
         <PostContainer posts={this.state.posts} />
-        <CommentSection posts={this.state.posts} />
       </div>
       );
     }
