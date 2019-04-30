@@ -1,10 +1,11 @@
 import React from 'react';
+import Comment from '../Comment/Comment';
 
 function CommentSection(props) {
     return (
-        <React.Fragment>
-
-        </React.Fragment>
+        <div className="comment-container">
+            <Comment posts={props.posts} />
+        </div>
 
     );
 }

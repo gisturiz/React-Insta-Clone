@@ -1,4 +1,5 @@
 import React from 'react';
+import './Comment.css';
 
 function Comment(props) {
 
@@ -15,10 +16,13 @@ function Comment(props) {
                         {posts.comments.map(elements => (
 
                             <div className="comments-section">
-                                {elements.username} {elements.text}
+                                <strong>{elements.username}</strong> {elements.text}
                             </div>
                         ))}
                     </div>
+                    <form className="add-comment">
+                    <input type="text" placeholder="Add comment..." />
+                    </form>
                 </div>
             ))}
 

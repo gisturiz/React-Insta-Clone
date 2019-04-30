@@ -14,6 +14,12 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState = {
+      posts: dummyData,
+    }
+  }
+
   handleChanges = event => {
     this.setState({
       [event.target.name]: event.target.value

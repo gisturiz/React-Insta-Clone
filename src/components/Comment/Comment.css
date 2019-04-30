@@ -1,0 +1,34 @@
+.post-container {
+    margin-bottom: 20px;
+}
+
+.post-content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.post-image img{
+    width: 100%;
+
+}
+
+.post-content img {
+    border-radius: 50%;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comments-section {
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.add-comment input {
+    width: 100%;
+    border: none;
+    border-top: 1px solid lightgrey;
+    padding: 20px 0;
+    font-size: 1rem;
+}

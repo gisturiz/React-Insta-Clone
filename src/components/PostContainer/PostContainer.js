@@ -1,10 +1,11 @@
 import React from 'react';
-import Comment from '../Comment/Comment';
+import './PostContainer.css';
+import CommentSection from '../CommentSection/CommentSection';
 
 function PostContainer(props) {
     return (
       <div className="top-container">
-        <Comment posts={props.posts} />
+        <CommentSection posts={props.posts} />
       </div>
     )
 }
