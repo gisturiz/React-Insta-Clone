@@ -1,5 +1,6 @@
 import React from 'react';
 import './Comment.css';
+import AddCommentForm from './AddCommentForm';
 
 function Comment(props) {
 
@@ -12,6 +13,7 @@ function Comment(props) {
                     <div className="post-image">
                         <img src={posts.imageUrl} alt={posts.username} />
                     </div>
+
                     <div className="post-comment">
                         {posts.comments.map(elements => (
 
@@ -20,9 +22,9 @@ function Comment(props) {
                             </div>
                         ))}
                     </div>
-                    <form className="add-comment">
-                    <input type="text" placeholder="Add comment..." />
-                    </form>
+                    <AddCommentForm comment={props.comment}
+                    handleChanges={props.handleChanges}
+                    addNewComment={props.addNewComment} />
                 </div>
             ))}
 

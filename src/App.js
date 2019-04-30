@@ -9,35 +9,15 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData,
-      comment: ""
+      posts: [],
     };
   }
 
   componentDidMount() {
-    this.setState = {
+    this.setState({
       posts: dummyData,
-    }
+    });
   }
-
-  handleChanges = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  };
-
-  addComment = event => {
-    event.preventDefault();
-    const newComment = {
-      task: this.state.comment, 
-      id: Date.now(),
-    };
-
-    this.setState({
-      posts: [...this.state.posts, newComment],
-      comment: "",
-    });
-  };
 
   render() {
     return (
@@ -45,9 +25,8 @@ class App extends React.Component {
         <SearchBar />
         <PostContainer posts={this.state.posts} />
       </div>
-      );
-    }
+    );
   }
-  
-  
-  export default App;
+};
+
+export default App;
