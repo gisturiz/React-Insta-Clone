@@ -1,0 +1,7 @@
+.moment{
+    display: flex;
+    padding: 0 10px 10px;
+    color: lightgrey;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}

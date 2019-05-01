@@ -1,11 +1,14 @@
 .post-container {
     margin-bottom: 20px;
+    border: 1px solid lightgrey;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 .post-content {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
+    padding: 10px 10px;
 }
 
 .post-image img{
@@ -25,10 +28,26 @@
     margin: 10px 0;
 }
 
+.post-comment {
+    padding: 0 10px;
+}
+
 .add-comment input {
-    width: 100%;
+    width: 98%;
     border: none;
     border-top: 1px solid lightgrey;
-    padding: 20px 0;
+    padding: 15px 0;
+    margin: 0 10px;
     font-size: 1rem;
+}
+
+.picture-icons {
+    display: flex;
+    padding: 0 5px;
+}
+
+.picture-icons i{
+    margin: 5px 0;
+    padding: 0 5px;
+    user-select: none;
 }

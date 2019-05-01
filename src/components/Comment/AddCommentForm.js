@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './AddCommentForm.css';
 
-export default class AddCommentForm extends Component {
-    constructor() {
-        super();
+class AddCommentForm extends Component {
+    constructor(props) {
+        super(props);
         this.state = {
             comment: '',
 
@@ -17,13 +18,12 @@ export default class AddCommentForm extends Component {
 
     addNewComment = event => {
         event.preventDefault();
-        const newComment = {
-            task: this.state.comment,
-        }
-
-
+        const newComment =  {
+            username: "IGTest",
+            text: this.state.comment,
+          }
+        this.props.addComment(newComment, this.props.index);
         this.setState({
-            posts: [...this.state.posts, newComment],
             comment: "",
         });
     }
@@ -31,11 +31,12 @@ export default class AddCommentForm extends Component {
     render() {
         return (
             <div>
-                <form className="add-comment" onsubmit={this.addNewComment}>
+                <form className="add-comment" onSubmit={this.addNewComment}>
                     <input
+                        name= "comment"
+                        type="text"
                         placeholder="Add comment..."
-                        value={this.comment}
-                        name="comment"
+                        value={this.state.comment}
                         onChange={this.handleChanges}
                     />
                 </form>
@@ -43,3 +44,5 @@ export default class AddCommentForm extends Component {
         )
     }
 }
+
+export default AddCommentForm;

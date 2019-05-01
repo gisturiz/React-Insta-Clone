@@ -4,13 +4,20 @@ import dummyData from "./dummy-data";
 import PostContainer from './components/PostContainer/PostContainer';
 import SearchBar from './components/SearchBar/SearchBar';
 
-
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       posts: [],
+      filtered: []
     };
+  }
+
+  addComment = (newComment, index) => {
+    console.log()
+    let updatedPost = [...this.state.posts]
+    updatedPost[index].comments = [...updatedPost[index].comments, newComment]
+    this.setState({ posts: updatedPost })
   }
 
   componentDidMount() {
@@ -19,14 +26,25 @@ class App extends React.Component {
     });
   }
 
+  searchHandler = e => {
+    const posts = this.state.posts.filter(ele => {
+      if(ele.username.includes(e.target.value)) {
+        return ele;
+      }
+    });
+    this.setState({ filtered: posts});
+  };
+
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <PostContainer posts={this.state.posts} />
+        <SearchBar search={this.searchHandler}/>
+        {this.state.posts.map((post, index) => <PostContainer post={post} index={index} addComment={this.addComment}/>)}
       </div>
     );
   }
 };
 
 export default App;
+
+// posts={this.state.posts}
