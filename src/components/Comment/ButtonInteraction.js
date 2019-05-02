@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './ButtonInteraction.css';
 
 class ButtonInteraction extends Component {
     constructor() {
@@ -10,15 +11,19 @@ class ButtonInteraction extends Component {
 
     handleClick = () => {
         this.setState(({ counter }) => ({
-          counter: counter + 1
+            counter: counter + 1
         }));
-      };
+    };
 
     render() {
         return (
-            <div className="picture-icons">
-                <i className="far fa-heart" onClick={this.handleClick}>  {this.state.counter}  </i><i className="far fa-comment"></i>
-            </div>
+
+            <React.Fragment>
+                <div className="picture-icons">
+                    <i className="far fa-heart" onClick={this.handleClick}></i><i className="far fa-comment"></i>
+                </div>
+                <div className="likes-container"><strong>{this.state.counter} likes</strong></div>
+            </React.Fragment>
         )
     }
 
