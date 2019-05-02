@@ -1,0 +1,17 @@
+.login-container {
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid lightgray;
+    position: relative;
+    width: 400px;
+    margin: 16px auto;
+    box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    background-color: #fff;
+    padding: 3rem 6rem;
+    flex-flow: column;
+}
+
+.input {
+    margin: 10px 0;
+}

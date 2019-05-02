@@ -1,55 +1,24 @@
 import React from 'react';
 import './App.css';
-import dummyData from "./dummy-data";
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostPage from './Components/PostPage/PostPage';
+import LoginPage from './Components/Login/LoginPage';
+import withAuthenticate from './Components/Authentication/withAuthenticate';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
-      posts: [],
-      filtered: []
-    };
+    this.state = {}
   }
-
-  addComment = (newComment, index) => {
-    console.log()
-    let updatedPost = [...this.state.posts]
-    updatedPost[index].comments = [...updatedPost[index].comments, newComment]
-    this.setState({ posts: updatedPost })
-  }
-
-  componentDidMount() {
-    this.setState({
-      posts: dummyData,
-    });
-  }
-
-  searchHandler = e => {
-    const posts = this.state.posts.filter(ele => {
-      if(ele.username.includes(e.target.value)) {
-        return ele;
-      }
-    });
-    this.setState({ filtered: posts});
-  };
 
   render() {
     return (
       <div className="App">
-        <SearchBar search={this.searchHandler}/>
-        {this.state.filtered.length === 0 ? this.state.posts.map((post, index) => <PostContainer 
-        post={post} index={index} 
-        addComment={this.addComment}/>):
-        this.state.filtered.map((post, index) => <PostContainer 
-        post={post} index={index} 
-        addComment={this.addComment}/>)
-        }
+        <ComponentFromWithAuthenticate />
       </div>
     );
   }
 };
 
-export default App;
+const ComponentFromWithAuthenticate = withAuthenticate(PostPage)(LoginPage);
 
+export default App;

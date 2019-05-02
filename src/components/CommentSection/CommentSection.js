@@ -1,7 +1,7 @@
 import React from 'react';
 import AddCommentForm from '../Comment/AddCommentForm';
 import './CommentSection.css';
-var moment = require('moment');
+import moment from 'moment';
 
 function CommentSection(props) {
     return (
