@@ -39,7 +39,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchBar search={this.searchHandler}/>
-        {this.state.posts.map((post, index) => <PostContainer post={post} index={index} addComment={this.addComment}/>)}
+        {this.state.filtered.length === 0 ? this.state.posts.map((post, index) => <PostContainer 
+        post={post} index={index} 
+        addComment={this.addComment}/>):
+        this.state.filtered.map((post, index) => <PostContainer 
+        post={post} index={index} 
+        addComment={this.addComment}/>)
+        }
       </div>
     );
   }
@@ -47,4 +53,3 @@ class App extends React.Component {
 
 export default App;
 
-// posts={this.state.posts}
