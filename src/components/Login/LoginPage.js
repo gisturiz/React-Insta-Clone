@@ -27,6 +27,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <form onSubmit={this.login} className="login-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram logo" />
         <input onChange={this.handleChanges} className="input" type="text" placeholder="Username" name="username" value={this.state.username} />
         <input onChange={this.handleChanges} className="input" type="text" placeholder="Password" name="password" value={this.state.password} />
         <Button color="primary">Login</Button>{' '}

@@ -15,3 +15,7 @@
 .input {
     margin: 10px 0;
 }
+
+.login-container img {
+    height: 60px;
+}
